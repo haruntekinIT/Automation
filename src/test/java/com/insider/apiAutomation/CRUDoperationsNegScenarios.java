@@ -21,12 +21,12 @@ public class CRUDoperationsNegScenarios {
     Given both accept type and content type is JSON
     And request json body is:
         {
-          "id": 117,
+          "id": 250,
           "category": {
             "id": 57,
             "name": "Mojo"
           },
-          "name": "doggie",
+          "name": "Moggie",
           "photoUrls": [
             "string"
           ],
@@ -149,14 +149,14 @@ public class CRUDoperationsNegScenarios {
             "id": 57,
             "name": "Mojo"
           },
-          "name": "Doggie",
+          "name": "Moggie",
           "photoUrls": [
             "string"
           ],
           "tags": [
             {
               "id": 57,
-              "name": "Mojo"
+              "name": "Kojo"
             }
           ],
           "status": "available"
@@ -165,15 +165,15 @@ public class CRUDoperationsNegScenarios {
     Then status code is 400
     And content type should be application/json
 
-    Actual result     : By using same pet id and different name, the user can create new pet
-    Expected result  : By using same pet id and different name, the user should not be able to create new pet
+    Actual result     : By using same pet id, name and different tags name, the user can create new pet
+    Expected result  : By using same pet id, name and different tags name, the user should not be able to create new pet
 
      */
     @Test(priority = 2)
     public void postAndGetNewPetNegative2() throws InterruptedException {
 
         int petIdToTest = 250;
-        String petNameToTest2 = "Loggie";
+        String petNameToTest2 = "Moggie";
 
         //POST method
         String jsonPayloadForPost = "{\n" +
@@ -189,7 +189,7 @@ public class CRUDoperationsNegScenarios {
                 "          \"tags\": [\n" +
                 "            {\n" +
                 "              \"id\": 57,\n" +
-                "              \"name\": \"Mojo\"\n" +
+                "              \"name\": \"Kojo\"\n" +
                 "            }\n" +
                 "          ],\n" +
                 "          \"status\": \"available\"\n" +
